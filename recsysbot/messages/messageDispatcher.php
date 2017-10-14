@@ -8,6 +8,7 @@ function messageDispatcher($telegram, $chatId, $messageId, $date, $text, $firstn
    $textWorkInProgress = "Sorry :) \nWe are developing this functionality \nSoon will be available ;)";
    $userMovieprofile = new UserProfileAcquisitionByMovie($telegram, $chatId, $messageId, $date, $text, $botName);
    $userMovieRecommendation = new userMovieRecommendation($telegram, $chatId, $messageId, $date, $text, $botName);
+   $dialogManager = new \Recsysbot\Classes\DialogManager($telegram, $chatId);
 
    switch ($text) {
       // /start...
@@ -879,7 +880,7 @@ function messageDispatcher($telegram, $chatId, $messageId, $date, $text, $firstn
          newSessionReply($telegram, $chatId, $firstname, $date);
          break;
       case ($text[0] != "/"):
-         $context = "findPropertyValueOrMovieSelected";
+         /*$context = "findPropertyValueOrMovieSelected";
          $replyText = $text;
          $replyFunctionCall = "findPropertyValueOrMovieReply"; 
          $pagerankCicle = getNumberPagerankCicle($chatId);
@@ -887,6 +888,8 @@ function messageDispatcher($telegram, $chatId, $messageId, $date, $text, $firstn
          $result = putChatMessage($chatId, $messageId, $context, $replyText, $replyFunctionCall, $pagerankCicle, $botName, $date, $responseType);
                  
          findPropertyValueOrMovieReply($telegram, $chatId,  $messageId, $date, $text, $userMovieprofile);
+         break;*/
+         $dialogManager->sendMessage($text);
          break;
       default:
          break;

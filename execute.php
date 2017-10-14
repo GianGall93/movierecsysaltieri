@@ -75,7 +75,7 @@ file_put_contents("php://stderr","chatId:".$chatId." - firstname:".$firstname." 
 $text = trim($text);
 
 // converto tutti i caratteri alfanumerici del messaggio in minuscolo
-$text = strtolower($text);
+//$text = strtolower($text);
 try {
       //gestisco il tipo di messaggio: testo
       if (isset ($message['text'])){
