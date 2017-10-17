@@ -14,7 +14,7 @@ class DialogManager
     }
 
     public function sendMessage($text) {
-        $client = new Client(['base_uri'=>'https://api.api.ai']);
+        $client = new Client(['base_uri'=>'https://api.dialogflow.com']);
         $stringGetRequest = '/v1/query?v=20150910&query='.$text.'&sessionId='.$this->chatId;
         $response = $client->request('GET', $stringGetRequest, [
             'headers' => [
