@@ -1,7 +1,7 @@
 <?php
 
 namespace Recsysbot\Classes;
-use GuzzleHttp\Client; include "urls.php";;
+use GuzzleHttp\Client;
 
 class DialogManager
 {

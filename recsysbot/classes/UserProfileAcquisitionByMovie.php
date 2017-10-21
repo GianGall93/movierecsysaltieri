@@ -5,7 +5,7 @@
 namespace Recsysbot\Classes;
 
 use Telegram\Bot\Api;
-use GuzzleHttp\Client; include "urls.php";
+use GuzzleHttp\Client; ;
 
 /*
    Classe che gestisce la creazione del profilo utente attraverso i film

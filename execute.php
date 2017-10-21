@@ -3,7 +3,7 @@
 /**
  * @author Francesco Baccaro
  */
-use GuzzleHttp\Client; include "recsysbot/restService/urls.php";;
+use GuzzleHttp\Client;
 use Telegram\Bot\Api;
 
 require 'vendor/autoload.php';

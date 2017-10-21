@@ -1,5 +1,5 @@
 <?php
-use GuzzleHttp\Client; include "urls.php";
+use GuzzleHttp\Client;
 
 function conf1helpReply($telegram, $chatId, $help){
 

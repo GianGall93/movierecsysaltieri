@@ -1,6 +1,6 @@
 <?php
  
-use GuzzleHttp\Client; include "urls.php";
+use GuzzleHttp\Client; ;
 
 function putExperimentalSessionRating($chatId, $number_recommendation_list, $numberStars){
 	$userID = $chatId;

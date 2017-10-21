@@ -1,6 +1,6 @@
 <?php
  
-use GuzzleHttp\Client; include "urls.php";
+use GuzzleHttp\Client;
 
 function putRecMovieRating($chatId, $movieURI, $numberRecommendationList, $rating, $position, $pagerankCicle, $refine, $refocus, $botName, $messageID, $botTimestamp, $recommendatinsList, $ratingsList){
 

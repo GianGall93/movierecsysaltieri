@@ -1,6 +1,6 @@
 
 <?php
-use GuzzleHttp\Client; include "urls.php";
+use GuzzleHttp\Client; ;
 
 function putLikeRecMovieRating($chatId, $movieURI, $numberRecommendationList, $like){
 	$userID = $chatId;

@@ -1,5 +1,5 @@
 <?php
-use GuzzleHttp\Client; include "recsysbot/restService/urls.php";;
+use GuzzleHttp\Client;
 
 function putPropertyRating($chatId, $propertyType, $propertyName, $rating, $lastChange){
 
