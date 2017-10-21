@@ -1,6 +1,6 @@
 <?php 
 
-use GuzzleHttp\Client; ;
+use GuzzleHttp\Client;
 use Telegram\Bot\Api;
 
 function checkUserDetailWelcomeReply($telegram, $chatId, $text){

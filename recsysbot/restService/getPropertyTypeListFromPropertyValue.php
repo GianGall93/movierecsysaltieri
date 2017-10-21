@@ -6,7 +6,7 @@ function getPropertyTypeListFromPropertyValue($name){
 	
 	//$client = new Client(['base_uri'=>'http://localhost:8080']);
    $client = new Client(['base_uri'=>getServiceBaseURL()]);
-   $stringGetRequest = '/movierecsysrestful/restService/propertyTypeList/getPropertyTypeListFromPropertyValue?name='.urlencode($name);    
+   $stringGetRequest = '/'.getServiceName().'/restService/propertyTypeList/getPropertyTypeListFromPropertyValue?name='.urlencode($name);
    $response = $client->request('GET', $stringGetRequest);
    $bodyMsg = $response->getBody()->getContents();
    $data = json_decode($bodyMsg);

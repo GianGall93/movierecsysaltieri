@@ -7,7 +7,7 @@ function getPropertyValueListFromPropertyType($chatId, $propertyType){
 	$userID = $chatId;
 	//$client = new Client(['base_uri'=>'http://localhost:8080']);
    $client = new Client(['base_uri'=>getServiceBaseURL()]);
-   $stringGetRequest = '/movierecsysrestful/restService/propertyValueList/getPropertyValueListFromPropertyType?userID='.$userID.'&propertyType='.urlencode($propertyType);
+   $stringGetRequest = '/'.getServiceName().'/restService/propertyValueList/getPropertyValueListFromPropertyType?userID='.$userID.'&propertyType='.urlencode($propertyType);
    $response = $client->request('GET', $stringGetRequest);
    $bodyMsg = $response->getBody()->getContents();
    $data = json_decode($bodyMsg);

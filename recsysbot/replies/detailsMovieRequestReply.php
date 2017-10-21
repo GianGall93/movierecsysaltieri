@@ -1,5 +1,5 @@
 <?php
-use GuzzleHttp\Client; ;
+use GuzzleHttp\Client;
 use Telegram\Bot\FileUpload\InputFile;
 
 function detailsMovieRequestReply($telegram, $chatId, $movie_name, $userMovieprofile){

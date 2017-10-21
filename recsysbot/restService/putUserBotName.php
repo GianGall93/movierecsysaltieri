@@ -1,6 +1,6 @@
 <?php
 
-use GuzzleHttp\Client; ;
+use GuzzleHttp\Client;
 
 function putUserBotName($chatId, $botName){
 

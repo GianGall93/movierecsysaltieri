@@ -1,5 +1,5 @@
 <?php
-use GuzzleHttp\Client; ;
+use GuzzleHttp\Client;
 
 function userPropertyValueRatingReply($telegram, $chatId, $propertyType, $propertyName, $rating, $lastChange){  
 

@@ -7,7 +7,7 @@ function putRuntimeRangeFilter($chatId, $propertyType, $propertyValue){
 	$userID = $chatId;
 	//$client = new Client(['base_uri'=>'http://localhost:8080']);
    $client = new Client(['base_uri'=>getServiceBaseURL()]);
-   $stringGetRequest = '/movierecsysrestful/restService/runtimeRangeFilter/putRuntimeRangeFilter?userID='.$userID.'&propertyType='.$propertyType.'&propertyValue='.$propertyValue;
+   $stringGetRequest = '/'.getServiceName().'/restService/runtimeRangeFilter/putRuntimeRangeFilter?userID='.$userID.'&propertyType='.$propertyType.'&propertyValue='.$propertyValue;
    $response = $client->request('GET', $stringGetRequest);
    $bodyMsg = $response->getBody()->getContents();
    $data = json_decode($bodyMsg);

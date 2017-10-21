@@ -5,7 +5,7 @@ function putDetailsRecMovieRequest($chatId, $movieURI, $numberRecommendationList
 	$userID = $chatId;
 	//$client = new Client(['base_uri'=>'http://localhost:8080']);
    $client = new Client(['base_uri'=>getServiceBaseURL()]);
-   $stringGetRequest ='/movierecsysrestful/restService/userDetailsRecMovieRequest/putDetailsRecMovieRequest?userID='.$userID.'&movieURI='.urlencode($movieURI).'&numberRecommendationList='.$numberRecommendationList.'&details='.$details;
+   $stringGetRequest ='/'.getServiceName().'/restService/userDetailsRecMovieRequest/putDetailsRecMovieRequest?userID='.$userID.'&movieURI='.urlencode($movieURI).'&numberRecommendationList='.$numberRecommendationList.'&details='.$details;
 
    $response = $client->request('GET', $stringGetRequest);
    $bodyMsg = $response->getBody()->getContents();

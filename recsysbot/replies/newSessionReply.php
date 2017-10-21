@@ -1,5 +1,5 @@
 <?php
-use GuzzleHttp\Client; ;
+use GuzzleHttp\Client;
 
 function newSessionReply($telegram, $chatId, $firstname, $date){
 

@@ -1,5 +1,5 @@
 <?php 
-use GuzzleHttp\Client; ;
+use GuzzleHttp\Client;
 
 function backFunction($telegram, $chatId, $messageId, $text, $botName, $date, $userMovieRecommendation){
 

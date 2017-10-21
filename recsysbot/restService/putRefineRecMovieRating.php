@@ -1,5 +1,5 @@
 <?php
-use GuzzleHttp\Client; ;
+use GuzzleHttp\Client;
 
 function putRefineRecMovieRating($chatId, $movieURI, $numberRecommendationList, $refine){
 	$userID = $chatId;

@@ -50,7 +50,7 @@ function putPropertyRating($chatId, $propertyType, $propertyName, $rating, $last
    if ($propertyURI !== "null" && $propertyTypeURI !== "null" ){    	
       //$client = new Client(['base_uri'=>'http://localhost:8080']);
       $client = new Client(['base_uri'=>getServiceBaseURL()]);
-      $stringGetRequest = '/movierecsysrestful/restService/propertyRating/putPropertyRating?userID='.$userID.'&propertyTypeURI='.urlencode($propertyTypeURI).'&propertyURI='.urlencode($propertyURI).'&rating='.$rating.'&lastChange='.$lastChange;
+      $stringGetRequest = '/'.getServiceName().'/restService/propertyRating/putPropertyRating?userID='.$userID.'&propertyTypeURI='.urlencode($propertyTypeURI).'&propertyURI='.urlencode($propertyURI).'&rating='.$rating.'&lastChange='.$lastChange;
       $response = $client->request('GET', $stringGetRequest);
       $bodyMsg = $response->getBody()->getContents();
       $data = json_decode($bodyMsg);
