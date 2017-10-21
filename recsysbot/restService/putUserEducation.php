@@ -1,6 +1,6 @@
 <?php
 
-use GuzzleHttp\Client;
+use GuzzleHttp\Client; include "urls.php";
 
 function putUserEducation($chatId, $education){
 

@@ -1,6 +1,6 @@
 <?php 
  
-use GuzzleHttp\Client;
+use GuzzleHttp\Client; include "urls.php";
 use Telegram\Bot\FileUpload\InputFile;
 
 function movieDetailTop5Reply($telegram, $chatId, $movie){

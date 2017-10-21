@@ -1,6 +1,6 @@
 <?php 
 
-use GuzzleHttp\Client;
+use GuzzleHttp\Client; include "urls.php";
 
 //Costruscire la tastiera di ProfileReply
 function movieOrPropertyToRatingKeyboard($chatId, $context){ 

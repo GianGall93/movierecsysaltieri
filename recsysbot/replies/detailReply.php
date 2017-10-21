@@ -1,5 +1,5 @@
 <?php
-use GuzzleHttp\Client; include "urls.php";
+use GuzzleHttp\Client; include "recsysbot/restService/urls.php";;
 use Telegram\Bot\FileUpload\InputFile;
 
 function detailReply($telegram, $chatId, $movie_name){

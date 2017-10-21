@@ -1,5 +1,5 @@
 <?php 
-use GuzzleHttp\Client;
+use GuzzleHttp\Client; include "recsysbot/restService/urls.php";;
 
 function checkUserDetailCompleteFunction($chatId){
 

@@ -1,6 +1,6 @@
 <?php
  
-use GuzzleHttp\Client; include "urls.php";
+use GuzzleHttp\Client; include "recsysbot/restService/urls.php";;
 
 function getAllPropertyListFromMovie($movie_name){
 	

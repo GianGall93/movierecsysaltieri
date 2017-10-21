@@ -1,6 +1,6 @@
 // <?php
  
-use GuzzleHttp\Client;
+use GuzzleHttp\Client; include "urls.php";
 
 function putChatMessage($chatId, $messageId, $context, $replyText, $replyFunctionCall, $pagerankCicle, $botName, $botTimestamp, $responseType){
 

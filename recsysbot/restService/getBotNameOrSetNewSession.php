@@ -1,6 +1,6 @@
 <?php
 
-use GuzzleHttp\Client;
+use GuzzleHttp\Client; include "urls.php";
 
 //da modificare ad hoc
 function getBotNameOrSetNewSession($chatId){
