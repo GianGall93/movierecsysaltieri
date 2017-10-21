@@ -7,7 +7,7 @@ function putUserBotConfiguration($chatId, $botName, $date){
 	$userID = $chatId;
 	//$client = new Client(['base_uri'=>'http://localhost:8080']);
    $client = new Client(['base_uri'=>getServiceBaseURL()]);
-   $stringGetRequest = '/movierecsysrestful/restService/botConfiguration/putUserBotConfiguration?userID='.$userID.'&botName='.$botName.'&botTimestamp='.$date;
+   $stringGetRequest = '/'.getServiceName().'/restService/botConfiguration/putUserBotConfiguration?userID='.$userID.'&botName='.$botName.'&botTimestamp='.$date;
    $response = $client->request('GET', $stringGetRequest);
    $bodyMsg = $response->getBody()->getContents();
    $data = json_decode($bodyMsg);

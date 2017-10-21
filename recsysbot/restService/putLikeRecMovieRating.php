@@ -6,7 +6,7 @@ function putLikeRecMovieRating($chatId, $movieURI, $numberRecommendationList, $l
 	$userID = $chatId;
 	//$client = new Client(['base_uri'=>'http://localhost:8080']);
    $client = new Client(['base_uri'=>getServiceBaseURL()]);
-   $stringGetRequest ='/movierecsysrestful/restService/userLikeRecMovieRating/putLikeRecMovieRating?userID='.$userID.'&movieURI='.urlencode($movieURI).'&numberRecommendationList='.$numberRecommendationList.'&like='.$like;
+   $stringGetRequest ='/'.getServiceName().'/restService/userLikeRecMovieRating/putLikeRecMovieRating?userID='.$userID.'&movieURI='.urlencode($movieURI).'&numberRecommendationList='.$numberRecommendationList.'&like='.$like;
 
    $response = $client->request('GET', $stringGetRequest);
    $bodyMsg = $response->getBody()->getContents();

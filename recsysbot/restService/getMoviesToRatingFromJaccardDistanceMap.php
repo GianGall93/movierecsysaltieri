@@ -7,7 +7,7 @@ function getMoviesToRatingFromJaccardDistanceMap($chatId){
 	$userID = $chatId;
 		//$client = new Client(['base_uri'=>'http://localhost:8080']);
    $client = new Client(['base_uri'=>getServiceBaseURL()]);
-   $stringGetRequest = '/movierecsysrestful/restService/moviesToRating/getMoviesToRatingFromJaccardDistanceMap?userID='.$userID;
+   $stringGetRequest = '/'.getServiceName().'/restService/moviesToRating/getMoviesToRatingFromJaccardDistanceMap?userID='.$userID;
    $response = $client->request('GET', $stringGetRequest);
    $bodyMsg = $response->getBody()->getContents();
    $data = json_decode($bodyMsg, true); 

@@ -6,7 +6,7 @@ function putExperimentalSessionRating($chatId, $number_recommendation_list, $num
 	$userID = $chatId;
 	//$client = new Client(['base_uri'=>'http://localhost:8080']);
    $client = new Client(['base_uri'=>getServiceBaseURL()]);
-   $stringGetRequest ='/movierecsysrestful/restService/ratingsExperimentalSession/putExperimentalSessionRating?userID='.$userID.'&numberRecommendationList='.$number_recommendation_list.'&rating='.$numberStars;
+   $stringGetRequest ='/'.getServiceName().'/restService/ratingsExperimentalSession/putExperimentalSessionRating?userID='.$userID.'&numberRecommendationList='.$number_recommendation_list.'&rating='.$numberStars;
 
    $response = $client->request('GET', $stringGetRequest);
    $bodyMsg = $response->getBody()->getContents();

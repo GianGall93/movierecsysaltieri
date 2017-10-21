@@ -5,7 +5,7 @@ function putRefineRecMovieRating($chatId, $movieURI, $numberRecommendationList, 
 	$userID = $chatId;
 	//$client = new Client(['base_uri'=>'http://localhost:8080']);
    $client = new Client(['base_uri'=>getServiceBaseURL()]);
-   $stringGetRequest ='/movierecsysrestful/restService/userRefineRecMovieRating/putRefineRecMovieRating?userID='.$userID.'&movieURI='.urlencode($movieURI).'&numberRecommendationList='.$numberRecommendationList.'&refine='.$refine;
+   $stringGetRequest ='/'.getServiceName().'/restService/userRefineRecMovieRating/putRefineRecMovieRating?userID='.$userID.'&movieURI='.urlencode($movieURI).'&numberRecommendationList='.$numberRecommendationList.'&refine='.$refine;
 
    $response = $client->request('GET', $stringGetRequest);
    $bodyMsg = $response->getBody()->getContents();

@@ -11,7 +11,7 @@ function putRecMovieToRating($chatId, $movieURI, $numberRecommendationList, $pos
 	$userID = $chatId;
 	//$client = new Client(['base_uri'=>'http://localhost:8080']);
    $client = new Client(['base_uri'=>getServiceBaseURL()]);
-   $stringGetRequest ='/movierecsysrestful/restService/userRecMovieToRating/putRecMovieToRating?userID='.$userID.'&movieURI='.urlencode($movieURI).'&numberRecommendationList='.$numberRecommendationList.'&position='.$position.'&pagerankCicle='.$pagerankCicle.'&botName='.$botName.'&messageID='.$messageID.'&botTimestamp='.$botTimestamp;
+   $stringGetRequest ='/'.getServiceName().'/restService/userRecMovieToRating/putRecMovieToRating?userID='.$userID.'&movieURI='.urlencode($movieURI).'&numberRecommendationList='.$numberRecommendationList.'&position='.$position.'&pagerankCicle='.$pagerankCicle.'&botName='.$botName.'&messageID='.$messageID.'&botTimestamp='.$botTimestamp;
 
    $response = $client->request('GET', $stringGetRequest);
    $bodyMsg = $response->getBody()->getContents();

@@ -8,7 +8,7 @@ function getBotNameOrSetNewSession($chatId){
 	$userID = $chatId;
 	//$client = new Client(['base_uri'=>'http://localhost:8080']);
    $client = new Client(['base_uri'=>getServiceBaseURL()]);
-   $stringGetRequest = '/movierecsysrestful/restService/sessionBotName/getBotNameOrSetNewSession?userID='.$userID;
+   $stringGetRequest = '/'.getServiceName().'/restService/sessionBotName/getBotNameOrSetNewSession?userID='.$userID;
    $response = $client->request('GET', $stringGetRequest);
    $bodyMsg = $response->getBody()->getContents();
    $data = json_decode($bodyMsg);

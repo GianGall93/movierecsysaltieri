@@ -7,7 +7,7 @@ function putUserUsedRecommenderSystems($chatId, $usedRecSys){
 	$userID = $chatId;
 	//$client = new Client(['base_uri'=>'http://localhost:8080']);
    $client = new Client(['base_uri'=>getServiceBaseURL()]);
-   $stringGetRequest = '/movierecsysrestful/restService/usedRecommenderSystems/putUserUsedRecommenderSystems?userID='.$userID.'&usedRecSys='.$usedRecSys;
+   $stringGetRequest = '/'.getServiceName().'/restService/usedRecommenderSystems/putUserUsedRecommenderSystems?userID='.$userID.'&usedRecSys='.$usedRecSys;
    $response = $client->request('GET', $stringGetRequest);
    $bodyMsg = $response->getBody()->getContents();
    $data = json_decode($bodyMsg);

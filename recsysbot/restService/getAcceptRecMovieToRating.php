@@ -7,7 +7,7 @@ function getAcceptRecMovieToRating($chatId){
 	$userID = $chatId;
 	//$client = new Client(['base_uri'=>'http://localhost:8080']);
    $client = new Client(['base_uri'=>getServiceBaseURL()]);
-   $stringGetRequest = '/movierecsysrestful/restService/recMovieToRating/getAcceptRecMovieToRating?userID='.$userID;
+   $stringGetRequest = '/'.getServiceName().'/restService/recMovieToRating/getAcceptRecMovieToRating?userID='.$userID;
    $response = $client->request('GET', $stringGetRequest);
    $bodyMsg = $response->getBody()->getContents();
    $data = json_decode($bodyMsg);

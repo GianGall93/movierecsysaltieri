@@ -7,7 +7,7 @@ function putUserDetail($chatId, $firstname, $lastname, $username){
 	$userID = $chatId;
 	//$client = new Client(['base_uri'=>'http://localhost:8080']);
    $client = new Client(['base_uri'=>getServiceBaseURL()]);
-   $stringGetRequest ='/movierecsysrestful/restService/detail/putUserDetail?userID='.$userID.'&firstname='.$firstname.'&lastname='.$lastname.'&username='.$username;
+   $stringGetRequest ='/'.getServiceName().'/restService/detail/putUserDetail?userID='.$userID.'&firstname='.$firstname.'&lastname='.$lastname.'&username='.$username;
    $response = $client->request('GET', $stringGetRequest);
    $bodyMsg = $response->getBody()->getContents();
    $data = json_decode($bodyMsg);

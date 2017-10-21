@@ -7,7 +7,7 @@ function putUserEducation($chatId, $education){
 	$userID = $chatId;
 	//$client = new Client(['base_uri'=>'http://localhost:8080']);
    $client = new Client(['base_uri'=>getServiceBaseURL()]);
-   $stringGetRequest = '/movierecsysrestful/restService/education/putUserEducation?userID='.$userID.'&education='.$education;
+   $stringGetRequest = '/'.getServiceName().'/restService/education/putUserEducation?userID='.$userID.'&education='.$education;
    $response = $client->request('GET', $stringGetRequest);
    $bodyMsg = $response->getBody()->getContents();
    $data = json_decode($bodyMsg);
