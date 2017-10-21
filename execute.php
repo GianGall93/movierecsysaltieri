@@ -3,7 +3,7 @@
 /**
  * @author Francesco Baccaro
  */
-use GuzzleHttp\Client;
+use GuzzleHttp\Client; include "urls.php";
 use Telegram\Bot\Api;
 
 require 'vendor/autoload.php';

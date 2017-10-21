@@ -1,5 +1,5 @@
 <?php
-use GuzzleHttp\Client;
+use GuzzleHttp\Client; include "urls.php";
 
 function putDetailsRecMovieRequest($chatId, $movieURI, $numberRecommendationList, $details){
 	$userID = $chatId;

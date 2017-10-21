@@ -1,5 +1,5 @@
 <?php
-use GuzzleHttp\Client;
+use GuzzleHttp\Client; include "urls.php";
 
 function putPropertyRating($chatId, $propertyType, $propertyName, $rating, $lastChange){
 

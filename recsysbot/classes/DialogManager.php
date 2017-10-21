@@ -2,6 +2,7 @@
 
 namespace Recsysbot\Classes;
 use GuzzleHttp\Client;
+include ""
 
 class DialogManager
 {
