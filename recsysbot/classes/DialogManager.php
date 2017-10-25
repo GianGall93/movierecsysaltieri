@@ -43,8 +43,8 @@ class DialogManager
             ]);
 
             //Se c'è un messaggio da visualizzare dopo l'immagine
-            if ($data['result']['fulfillment']['data']['postDataSpeech'] != null) {
-                $this->writeText($data['result']['fulfillment']['data']['postDataSpeech']);
+            if ($data['result']['fulfillment']['data']['postImageSpeech'] != null) {
+                $this->writeText($data['result']['fulfillment']['data']['postImageSpeech']);
             }
         }
 
@@ -82,8 +82,8 @@ class DialogManager
             ]);
 
             //Se c'è un messaggio da visualizzare dopo l'immagine
-            if ($data['data']['postDataSpeech'] != null) {
-                $this->writeText($data['result']['fulfillment']['data']['postDataSpeech']);
+            if ($data['data']['postImageSpeech'] != null) {
+                $this->writeText($data['result']['fulfillment']['data']['postImageSpeech']);
             }
         }
     }
