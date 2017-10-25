@@ -41,6 +41,11 @@ class DialogManager
                 'photo' => $data['result']['fulfillment']['data']['image'],
                 'caption' => $data['result']['fulfillment']['data']['imageCaption']
             ]);
+
+            //Se c'è un messaggio da visualizzare dopo l'immagine
+            if ($data['result']['fulfillment']['data']['postDataSpeech'] != null) {
+                $this->writeText($data['result']['fulfillment']['data']['postDataSpeech']);
+            }
         }
 
         //Controlla se si deve chiamare un'api
@@ -76,6 +81,10 @@ class DialogManager
                 'caption' => $data['data']['imageCaption']
             ]);
 
+            //Se c'è un messaggio da visualizzare dopo l'immagine
+            if ($data['data']['postDataSpeech'] != null) {
+                $this->writeText($data['result']['fulfillment']['data']['postDataSpeech']);
+            }
         }
     }
 
