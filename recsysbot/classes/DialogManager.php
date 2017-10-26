@@ -1,6 +1,7 @@
 <?php
 
 namespace Recsysbot\Classes;
+use Exception;
 use GuzzleHttp\Client;
 
 class DialogManager
