@@ -98,7 +98,7 @@ class DialogManager
                 'photo' => $image,
                 'caption' => $caption
             ]);
-        } catch (TelegramResponseException $e) {
+        } catch (Throwable $e) {
             $this->telegram->sendPhoto([
                 'chat_id' => $this->chatId,
                 'photo' => "./recsysbot/images/default.jpg",
