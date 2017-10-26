@@ -26,6 +26,7 @@ $input = json_decode(file_get_contents('php://input'), true);
 $senderId = $input['entry'][0]['messaging'][0]['sender']['id'];
 $answer = $input['entry'][0]['messaging'][0]['message']['text'];
 
+
 $response = [
 		'recipient' => [ 'id' => $senderId ],
 		'message' => [ 'text' => $answer ]
