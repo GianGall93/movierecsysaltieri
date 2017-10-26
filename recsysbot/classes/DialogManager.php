@@ -93,11 +93,12 @@ class DialogManager
 
     public function sendImage($image, $caption) {
         try {
-            $this->telegram->sendPhoto([
+            $response = $this->telegram->sendPhoto([
                 'chat_id' => $this->chatId,
                 'photo' => $image,
                 'caption' => $caption
             ]);
+            file_put_contents("php://stderr", "Response from sendPhoto is ".print_r($response).PHP_EOL);
         } catch (Throwable $e) {
             $this->telegram->sendPhoto([
                 'chat_id' => $this->chatId,
