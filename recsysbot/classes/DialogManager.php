@@ -100,6 +100,7 @@ class DialogManager
             ]);
             file_put_contents("php://stderr", "Response from sendPhoto is ".print_r($response).PHP_EOL);
         } catch (Exception $e) {
+            file_put_contents("php://stderr", "I caught the exception!".PHP_EOL);
             $this->telegram->sendPhoto([
                 'chat_id' => $this->chatId,
                 'photo' => "./recsysbot/images/default.jpg",
