@@ -36,11 +36,8 @@ class DialogManager
 
         //Controlla se c'è un'immagine da visualizzare
         if ($data['result']['fulfillment']['data']['image'] != null) {
-            $this->telegram->sendPhoto([
-                'chat_id' => $this->chatId,
-                'photo' => $data['result']['fulfillment']['data']['image'],
-                'caption' => $data['result']['fulfillment']['data']['imageCaption']
-            ]);
+            $this->sendImage($data['result']['fulfillment']['data']['image'],
+                $data['result']['fulfillment']['data']['imageCaption']);
 
             //Se c'è un messaggio da visualizzare dopo l'immagine
             if ($data['result']['fulfillment']['data']['postImageSpeech'] != null) {
@@ -75,11 +72,7 @@ class DialogManager
         $this->writeText($textResponse);
 
         if ($data['data']['image'] != null) {
-            $response = $this->telegram->sendPhoto([
-                'chat_id' => $this->chatId,
-                'photo' => $data['data']['image'],
-                'caption' => $data['data']['imageCaption']
-            ]);
+            $this->sendImage($data['data']['image'], $data['data']['imageCaption']);
 
             //Se c'è un messaggio da visualizzare dopo l'immagine
             if ($data['data']['postImageSpeech'] != null) {
@@ -95,6 +88,22 @@ class DialogManager
                 $this->telegram->sendChatAction(['chat_id' => $this->chatId, 'action' => 'typing']);
                 $this->telegram->sendMessage(['chat_id' => $this->chatId, 'text' => $messages[$i]]);
             }
+        }
+    }
+
+    public function sendImage($image, $caption) {
+        try {
+            $this->telegram->sendPhoto([
+                'chat_id' => $this->chatId,
+                'photo' => $image,
+                'caption' => $caption
+            ]);
+        } catch (TelegramResponseException $e) {
+            $this->telegram->sendPhoto([
+                'chat_id' => $this->chatId,
+                'photo' => "./recsysbot/images/default.jpg",
+                'caption' => $caption
+            ]);
         }
     }
 
