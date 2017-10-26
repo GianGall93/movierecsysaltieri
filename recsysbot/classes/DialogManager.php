@@ -79,7 +79,7 @@ class DialogManager
 
             //Se c'è un messaggio da visualizzare dopo l'immagine
             if ($data['data']['postImageSpeech'] != null) {
-                $this->writeText($data['result']['fulfillment']['data']['postImageSpeech']);
+                $this->writeText($data['data']['postImageSpeech']);
             }
         }
     }
