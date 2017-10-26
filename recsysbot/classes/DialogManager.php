@@ -75,6 +75,8 @@ class DialogManager
         if ($data['data']['image'] != null) {
             $this->sendImage($data['data']['image'], $data['data']['imageCaption']);
 
+            file_put_contents("php://stderr", "After sendImage".PHP_EOL);
+
             //Se c'è un messaggio da visualizzare dopo l'immagine
             if ($data['data']['postImageSpeech'] != null) {
                 $this->writeText($data['result']['fulfillment']['data']['postImageSpeech']);
