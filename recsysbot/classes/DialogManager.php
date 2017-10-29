@@ -76,9 +76,8 @@ class DialogManager
         $client = new Client();
         $request = $client->post($url,array(
             'content-type' => 'application/json'
-        ),array());
+        ), json_encode($parameters));
         $options = [
-            'body' => json_encode($parameters),
             'headers' => ['Content-Type' => 'application/json'],
         ];
         file_put_contents("php://stderr", "Body is:".json_encode($parameters).PHP_EOL);
