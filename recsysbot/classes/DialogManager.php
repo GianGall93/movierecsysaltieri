@@ -77,8 +77,11 @@ class DialogManager
         $request = $client->post($url,array(
             'content-type' => 'application/json'
         ),array());
-        $request->setBody($parameters); #set body!
-        $response = $request->send();
+        $options = [
+            'body' => $parameters,
+            'headers' => ['Content-Type' => 'application/json'],
+        ];
+        $response = $client->post($url, $options);
         $this->handleAuxiliaryRequestResponse($response);
     }
 
