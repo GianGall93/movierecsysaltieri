@@ -81,6 +81,7 @@ class DialogManager
             'body' => json_encode($parameters),
             'headers' => ['Content-Type' => 'application/json'],
         ];
+        file_put_contents("php://stderr", "Body is:".print_r($parameters, true).PHP_EOL);
         $response = $client->post($url, $options);
         $this->handleAuxiliaryRequestResponse($response);
     }
