@@ -51,6 +51,10 @@ class DialogManager
             file_put_contents("php://stderr", "Found an auxiliary API request".PHP_EOL);
             $this->sendAuxiliaryRequest($data['result']['fulfillment']['data']['apiURL']);
         }
+        if ($data['result']['fulfillment']['data']['auxAPI'] != null) {
+            file_put_contents("php://stderr", "Found an auxiliary POST API request".PHP_EOL);
+            $this->sendAuxiliaryRequest($data['result']['fulfillment']['data']['auxAPI']);
+        }
 
     }
 
@@ -64,6 +68,18 @@ class DialogManager
 
         file_put_contents("php://stderr", "Auxiliary request sent:".print_r($data, true).PHP_EOL);
         $this->handleAuxiliaryRequestResponse($data);
+    }
+
+    public function sendAuxiliaryPostRequest($data) {
+        $url = $data['apiURL'];
+        $parameters = $data['parameters'];
+        $client = new Client();
+        $request = $this->client->post($url,array(
+            'content-type' => 'application/json'
+        ),array());
+        $request->setBody($data); #set body!
+        $response = $request->send();
+        $this->handleAuxiliaryRequestResponse($response);
     }
 
     public function handleAuxiliaryRequestResponse($data) {
