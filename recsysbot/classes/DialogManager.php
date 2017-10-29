@@ -78,6 +78,7 @@ class DialogManager
         $response = $client->post($url, [
             'json' => $parameters
         ]);
+        file_put_contents("php://stderr", "Response is:".print_r($response).PHP_EOL);
         $this->handleAuxiliaryRequestResponse($response);
     }
 
