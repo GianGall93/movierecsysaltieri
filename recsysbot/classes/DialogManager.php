@@ -78,7 +78,7 @@ class DialogManager
             'content-type' => 'application/json'
         ),array());
         $options = [
-            'json' =>$parameters,
+            'body' => json_encode($parameters),
             'headers' => ['Content-Type' => 'application/json'],
         ];
         $response = $client->post($url, $options);
