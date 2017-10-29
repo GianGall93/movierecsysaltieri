@@ -74,14 +74,10 @@ class DialogManager
         $url = $data['apiURL'];
         $parameters = $data['parameters'];
         $client = new Client();
-        $request = $client->post($url,array(
-            'content-type' => 'application/json'
-        ), json_encode($parameters));
-        $options = [
-            'headers' => ['Content-Type' => 'application/json'],
-        ];
         file_put_contents("php://stderr", "Body is:".json_encode($parameters).PHP_EOL);
-        $response = $client->post($url, $options);
+        $response = $client->post($url, [
+            'json' => $parameters
+        ]);
         $this->handleAuxiliaryRequestResponse($response);
     }
 
