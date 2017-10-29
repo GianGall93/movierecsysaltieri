@@ -53,7 +53,7 @@ class DialogManager
         }
         if ($data['result']['fulfillment']['data']['auxAPI'] != null) {
             file_put_contents("php://stderr", "Found an auxiliary POST API request".PHP_EOL);
-            $this->sendAuxiliaryRequest($data['result']['fulfillment']['data']['auxAPI']);
+            $this->sendAuxiliaryPostRequest($data['result']['fulfillment']['data']['auxAPI']);
         }
 
     }
