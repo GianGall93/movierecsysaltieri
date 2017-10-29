@@ -74,7 +74,7 @@ class DialogManager
         $url = $data['apiURL'];
         $parameters = $data['parameters'];
         $client = new Client();
-        $request = $this->client->post($url,array(
+        $request = $client->post($url,array(
             'content-type' => 'application/json'
         ),array());
         $request->setBody($data); #set body!
