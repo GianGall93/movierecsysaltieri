@@ -1,8 +1,8 @@
 <?php
 
 // PARAMETRI DA MODIFICARE
-$WEBHOOK_URL = 'https://movierecsysbot.herokuapp.com/execute.php';
-$BOT_TOKEN = '297809022:AAHaM0c6-mE2PvrFlEnV7JeHnKXor7JCSgM';
+$WEBHOOK_URL = 'https://testmovierecsysbot.herokuapp.com/execute.php';
+$BOT_TOKEN = '422658992:AAH1c7kkVvuAIIuVDbbek7Mo4Zd0pKSU8nM';
 
 // NON APPORTARE MODIFICHE NEL CODICE SEGUENTE
 $API_URL = 'https://api.telegram.org/bot' . $BOT_TOKEN .'/';
