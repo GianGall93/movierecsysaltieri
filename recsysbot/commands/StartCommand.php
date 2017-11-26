@@ -41,7 +41,7 @@ class StartCommand extends Command
             $keyboard = startProfileAcquisitionKeyboard();
             $reply_markup = $this->getTelegram()->replyKeyboardMarkup([ 'keyboard' => $keyboard, 'resize_keyboard' => true, 'one_time_keyboard' => false]);
             $text = "Hi ".$firstname." 😃\n";
-            $text .= "Do you like Movies?🍿🍿🍿🍿🍿\nI can find the perfect 🎬 #movie for you, based on your tastes 😉";
+            $text .= "Hi Massi,\n" . "I'm a movie recommender system.\n" . "I'm able to suggest you movies 🎬 according to your preferences 😉\n" . "I need at least 3 preferences for generating recommendations 😉";
             $text .= "\nI need at least 3 preferences for generating recommendations 😉";
             $this->replyWithMessage(['text' => $text, 'reply_markup' => $reply_markup]); 
 
