@@ -74,8 +74,9 @@ class Telegram implements Platform {
 	
 	public function sendLink($chat_id, $text, $url, $reply_markup) {
 
-		$request_url = "https://api.telegram.org/bot422658992:AAH1c7kkVvuAIIuVDbbek7Mo4Zd0pKSU8nM/sendMessage";
-
+		$config = require_once '/app/recsysbot/config/movierecsysbot-config.php';
+		$request_url = "https://api.telegram.org/bot" . $config['telegram_token'] . "/sendMessage";
+		
 		$parameters = [
 				'chat_id' => $chat_id,
 				'text' => $text,
