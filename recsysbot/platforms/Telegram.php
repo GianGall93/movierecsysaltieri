@@ -107,7 +107,7 @@ class Telegram implements Platform {
 			'action' => $action
 		];
 		file_put_contents("php://stderr", "Sending chat action: " . print_r($chatAction, true) . PHP_EOL);
-		$this->$telegram->sendChatAction($chatAction);
+		$this->telegram->sendChatAction($chatAction);
 	}
 	
 	private function replyKeyboardMarkup($keyboard) {
