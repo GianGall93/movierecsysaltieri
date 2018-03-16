@@ -10,10 +10,11 @@ class Telegram implements Platform {
 	}
 	
 	var $telegram;
+	var $config;
 	
 	public function __construct() {
-		$config = require '/app/recsysbot/config/movierecsysbot-config.php';
-		$this->$telegram = new Api($config['telegram_token']);
+		$this->config = require '/app/recsysbot/config/movierecsysbot-config.php';
+		$this->telegram = new Api($config['telegram_token']);
 	}
 	
 	public function sendMessage($chat_id, $text, $reply_markup) {
@@ -29,14 +30,14 @@ class Telegram implements Platform {
 		]);
 
 		if (isset($reply_markup)) {
-			$this->$telegram->sendMessage([
+			$this->telegram->sendMessage([
 					'chat_id' => $chat_id,
 					'text' => $text,
 					'reply_markup' => $markup,
 					'parse_mode' => 'Markdown'
 			]);
 		} else {
-			$this->$telegram->sendMessage([
+			$this->telegram->sendMessage([
 					'chat_id' => $chat_id,
 					'text' => $text,
 					'parse_mode' => 'Markdown'
@@ -57,14 +58,14 @@ class Telegram implements Platform {
 		]);
 		
 		if (isset($reply_markup)) {
-			$this->$telegram->sendPhoto([
+			$this->telegram->sendPhoto([
 					'chat_id' => $chat_id,
 					'photo' => $photo,
 					'caption' => $caption,
 					'reply_markup' => $markup
 			]);
 		} else {
-			$this->$telegram->sendPhoto([
+			$this->telegram->sendPhoto([
 					'chat_id' => $chat_id,
 					'photo' => $photo,
 					'caption' => $caption
@@ -74,8 +75,7 @@ class Telegram implements Platform {
 	
 	public function sendLink($chat_id, $text, $url, $reply_markup) {
 
-		$config = require_once '/app/recsysbot/config/movierecsysbot-config.php';
-		$request_url = "https://api.telegram.org/bot" . $config['telegram_token'] . "/sendMessage";
+		$request_url = "https://api.telegram.org/bot" . $this->config['telegram_token']. "/sendMessage";
 		
 		$parameters = [
 				'chat_id' => $chat_id,
@@ -112,7 +112,7 @@ class Telegram implements Platform {
 	
 	private function replyKeyboardMarkup($keyboard) {
 		
-		$reply_markup = $this->$telegram->replyKeyboardMarkup([
+		$reply_markup = $this->telegram->replyKeyboardMarkup([
 				'keyboard' => $keyboard['keyboard'],
 				'resize_keyboard' => $keyboard['resize_keyboard'],
 				'one_time_keyboard' => $keyboard['one_time_keyboard']
@@ -122,7 +122,7 @@ class Telegram implements Platform {
 	}
 	
 	public function getWebhookUpdates() {
-		return $this->$telegram->getWebhookUpdates();
+		return $this->telegram->getWebhookUpdates();
 	}
 	
 	public function getMessageInfo($json) {
