@@ -16,7 +16,7 @@ function sendLink($chat_id, $text, $link, $reply_markup) {
 					[
 						'type' => 'web_url',
 						'url' => $link,
-						'title' => 'Watch Trailer'
+						'title' => $text
 					]
 				]
 			]
