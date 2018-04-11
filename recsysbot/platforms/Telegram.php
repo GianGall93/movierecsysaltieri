@@ -74,7 +74,7 @@ class Telegram implements Platform {
 	}
 	
 	public function sendLink($chat_id, $text, $url, $reply_markup) {
-		
+
 		$request_url = "https://api.telegram.org/bot" . $this->config['telegram_token']. "/sendMessage";
 		
 		$parameters = [
